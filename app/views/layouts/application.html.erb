@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Blog</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag 'application' %>
+    <%= stylesheet_link_tag 'customw' %>
+
+  </head>
+
+  <body>
+  <%= render 'layouts/navigation' %>
+
+  <div class="container mt-5">
+
+    <%= render 'shared/messages' %>
+
+      <%= yield %>   
+
+      <%#= debug(params) if Rails.env.development? %>
+  </div>
+
+  <%= javascript_include_tag 'application' %>
+  <%= javascript_include_tag 'jquery.bootstrap-growl' %>
+  
+<!--
+  <script type="text/javascript">
+
+      $(document).ready(function () {
+      
+      window.setTimeout(function() {
+          $(".alert").fadeTo(1000, 0).slideUp(1000, function(){
+              $(this).remove(); 
+          });
+      }, 5000);
+      
+      });
+</script>
+-->
+
+
+
+  </body>
+  
+</html>

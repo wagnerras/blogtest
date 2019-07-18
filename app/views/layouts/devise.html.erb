@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <title>Teste</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+    <%= stylesheet_link_tag 'application'%>
+    <%= stylesheet_link_tag 'customw'%>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">    
+  </head>
+  <body>
+
+   <div class="container">
+    <%= render 'shared/messages' %>
+    <div style="height:500px;">
+    
+      <div style="width:415px;  padding: 15px;" class="mx-auto mt-5"> <%= yield %> </div>   
+    </div>
+   </div>
+
+
+
+  </body>
+ <%= javascript_include_tag 'application' %>
+
+ <script type="text/javascript">
+
+      $(document).ready(function () {
+      
+      window.setTimeout(function() {
+          $(".alert").fadeTo(1000, 0).slideUp(1000, function(){
+              $(this).remove(); 
+          });
+      }, 5000);
+      
+      });
+</script>
+</html>

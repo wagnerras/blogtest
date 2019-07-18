@@ -1,0 +1,10 @@
+
+<h1 align="center">Listing searched articles</h1>
+
+<%= render 'shared/articles', obj: @articles %>
+
+ <div class="d-flex justify-content-center" >
+    <%= paginate @articles %> 
+ </div>
+
+ <br>

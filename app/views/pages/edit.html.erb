@@ -1,0 +1,66 @@
+<div >
+
+
+  <% if @user.errors.any? %>
+              <div class="alert alert-danger alert-dismissable">
+                  <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+                  
+                  <ul>
+                    <% @user.errors.full_messages.each do |message| %>
+                      <li> <%= message %> </li>
+                    <% end %>
+                  </ul>
+              </div>
+  <% end %>
+
+  <div style="width:400px; " class="p-2 mx-auto">
+
+    <%= form_with( url: profile_path, model: @user, local:true) do |f| %>
+      
+      <%= f.fields_for :user_profile do |pf|  %>
+
+      <figure class="figure">
+          <%= image_tag(avatar_url, class:"figure-img img-fluid rounded", alt:"...", style:"width:200px; height:150px; margin-left:90px;" )  %>
+      </figure>
+
+      <div class="form-group">
+        <%= pf.label :avatar %>
+        <%= pf.file_field :avatar, autofocus: true, autocomplete: "foto" , class:"form-control-file" %>
+      </div>
+
+      <div class="form-group">
+        <%= pf.label :name %>
+        <%= pf.text_field :name, autofocus: true, autocomplete: "nome" , class:"form-control" %>
+      </div>
+
+      <%end %>
+  
+      <div class="form-group">
+        <%= f.label :email %>
+        <%= f.email_field :email, autofocus: true, autocomplete: "email" , class:"form-control" %>
+      </div>
+
+      <div class="form-group">
+        <%= f.label :password %>
+        <% if @minimum_password_length %>
+          <em>(<%= @minimum_password_length %> characters minimum)</em>
+        <% end %>
+        <%= f.password_field :password, autocomplete: "new-password" , class:"form-control" %>
+      </div>
+
+      <div class="form-group">
+        <%= f.label :password_confirmation %>
+        <%= f.password_field :password_confirmation, autocomplete: "new-password" , class:"form-control" %>
+      </div>
+
+      <div class="actions">
+        <%= f.submit "Update", class:"btn btn-primary btn-block" %>
+      </div>
+    <% end %>
+
+    <%= link_to "Back", :back %>
+    <%= link_to "Delete User", user_registration_path, method: :delete  %>
+  </div>
+
+</div>
+

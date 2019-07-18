@@ -1,0 +1,27 @@
+
+
+<%= render 'shared/errors', obj: @article %>
+
+<%= form_for(@article) do |f| %>
+
+  <div class="form-group">
+    <%= f.label :title %>
+    <%= f.text_field :title, class: "form-control", placeholder: "Title of article", autofocus: true %>
+  </div>
+  <div class="form-group">
+    <%= f.label :description %>
+    <%= f.text_area :description, rows: 10, class: "form-control", placeholder: "Body of article" %>
+  </div>
+  <div class="form-group">
+    <%= f.file_field :anexo, autofocus: true, autocomplete: "anexo" , class:"form-control-file" %>
+    <% if @article.anexo.attached? %>
+     <figure class="figure" style="width:100px; heigth:100px;">
+      <%= image_tag(@article.anexo, class:"figure-img img-fluid rounded", alt:"...", style:"margin-left:120px" ) %>
+     </figure>
+    <%end %>
+  </div>
+ 
+   <%= f.hidden_field :user_id, value:@usuario %> 
+  
+ <%= f.submit class: 'btn btn-primary btn-large' %>
+<% end %>

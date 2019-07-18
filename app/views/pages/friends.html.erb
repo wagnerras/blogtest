@@ -1,0 +1,17 @@
+<div class="row">
+<% @friends.each do |friend| %>
+   <% friend.build_user_profile if friend.user_profile.blank?  %>
+  <div class="col-sm-6">
+    <div class="card mb-2" style="width: 25rem;">
+       <%= image_tag(avatar_link(friend) ,
+       class:"card-img-top mx-auto", alt:"Card image cap", style:"width:200px; height:150px; border-radius: 10px; margin-top:10px;") %>
+      <div class="card-body">
+        <h5 class="card-title"><%= name_link(friend) %></h5>
+        <p class="card-text"><%= friend.user_profile.address %></p>
+         <p class="card-text"><%= friend.email %></p>
+        <%= link_to 'His/Her Articles', userarticles_path(user_id: friend.id, email: friend.email, name: param_name_link(friend)),  class:"btn btn-primary" %>
+      </div>
+    </div>
+  </div>
+<% end %>
+</div>
