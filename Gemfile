@@ -56,6 +56,7 @@ gem 'active_storage_validations'
 # Optional, to use :dimension validator
 gem 'mini_magick'
 
+gem 'webpacker'
 
 
 group :development, :test do
