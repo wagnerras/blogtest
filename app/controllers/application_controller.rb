@@ -2,6 +2,7 @@ class ApplicationController < ActionController::Base
       before_action :authenticate_user!
       layout :layout_by_resource
       before_action :build_profile
+      before_action :set_global_params
 
 
 
@@ -20,6 +21,10 @@ class ApplicationController < ActionController::Base
            current_user.build_user_profile 
           end
         end  
+      end
+     
+      def set_global_params
+        $global_params = params
       end
 
 end

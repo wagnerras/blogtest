@@ -31,9 +31,10 @@
 
 
 <% @article.replies.each do |reply| %>
+ <%reply.user.build_user_profile if reply.user.user_profile.blank?  %>
   <div class="jumbotron mx-auto" style="padding: 5px; background-color: #F2F2F2; border: 1px solid #E6E6E6; width: 90%;">
     <div class="container">
-      <p><%= reply.user.user_profile.name %> <small class="ml-5"> last updated: <%= time_ago_in_words(reply.updated_at) %> ago</small></p>    
+      <p><%= reply_name(reply) %> <small class="ml-5"> last updated: <%= time_ago_in_words(reply.updated_at) %> ago</small></p>    
       <p class="lead"><%= reply.description %></p>
         <% if current_user == reply.user %>
             <!-- Button trigger modal -->

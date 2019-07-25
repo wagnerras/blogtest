@@ -17,6 +17,10 @@ module ApplicationHelper
         article.user.user_profile.name? ? article.user.user_profile.name : article.user.email
     end
 
+    def reply_name(reply)
+        reply.user.user_profile.name? ? reply.user.user_profile.name : reply.user.email
+    end
+
     def param_name_link(friend)
         friend.user_profile.name? ? friend.user_profile.name : friend.email
     end
