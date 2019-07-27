@@ -24,5 +24,6 @@ module ApplicationHelper
     def param_name_link(friend)
         friend.user_profile.name? ? friend.user_profile.name : friend.email
     end
+
     
 end

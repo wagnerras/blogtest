@@ -1,10 +1,10 @@
 
   <%= render 'shared/errors', obj: @reply if @reply %>
 <div class="jumbotron">
-  <h1 class="display-4"><%= @article.title %></h1>
-  <p class="lead"><%= simple_format(@article.description) %></p>
+  <h1 class="display-4" style="color:#000080;"><%= @article.title.capitalize %></h1>
+  <p class="lead"><%= simple_format(@article.description.capitalize) %></p>
   <% if @article.anexo.attached? %>
-      <figure class="figure" style="width:300px; heigth:300px;">
+      <figure class="figure" style="width:50%; heigth:50%;">
         <%= image_tag(@article.anexo, class:"figure-img img-fluid rounded", alt:"...", style:"margin-left:120px" ) %>
       </figure>
   <%end %>
@@ -32,10 +32,10 @@
 
 <% @article.replies.each do |reply| %>
  <%reply.user.build_user_profile if reply.user.user_profile.blank?  %>
-  <div class="jumbotron mx-auto" style="padding: 5px; background-color: #F2F2F2; border: 1px solid #E6E6E6; width: 90%;">
+  <div class="jumbotron mx-auto" style="padding: 5px; background-color: #F2F2F2; border: 1px solid #E6E6E6; width: 90%; position:relative;">
     <div class="container">
-      <p><%= reply_name(reply) %> <small class="ml-5"> last updated: <%= time_ago_in_words(reply.updated_at) %> ago</small></p>    
-      <p class="lead"><%= reply.description %></p>
+      <p style="color: #000080;" ><%= reply_name(reply) %> <small class="smallreply"> last updated: <%= time_ago_in_words(reply.updated_at) %> ago</small></p>    
+      <p class="lead" style="font-size:1em;"><%= reply.description.capitalize %></p>
         <% if current_user == reply.user %>
             <!-- Button trigger modal -->
             <%= link_to 'Edit', '#',  class:"btn btn-sm btn-primary", "data-toggle":"modal", "data-target":"#modal2" %>
@@ -57,10 +57,10 @@
         <div class="modal-body">
           <%= form_with(model: reply, local: true) do |f| %>
             <div class="form-group">
-              <%= f.label :description %>
+              <%#= f.label :description %>
               <%= f.text_area :description, class: "form-control", placeholder: "Body of reply" %>
             </div>
-            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
             <%= f.submit class: 'btn btn-primary btn-large' %>        
           <%end %>  
         </div>
@@ -88,12 +88,12 @@
       <div class="modal-body">
         <%= form_with(url: replies_path, local: true) do |f| %>
           <div class="form-group">
-            <%= f.label :description %>
+            <%#= f.label :description %>
             <%= f.text_area :description, class: "form-control", placeholder: "Body of reply" %>
           </div>
            <%= f.hidden_field :user_id, value:current_user.id %> 
            <%= f.hidden_field :article_id, value:@article.id %> 
-          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
           <%= f.submit class: 'btn btn-primary btn-large' %>        
         <%end %>  
       </div>
