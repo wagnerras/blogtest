@@ -5,9 +5,17 @@
     margin-top: 15px;
    }
 
-   .form-signin h2 {
+.form-signin h2 {
        text-align: center;
    }
+
+
+.smallreply {
+    position: absolute;
+    right: 1em;
+    top: 1em;
+}
+
 
 /* Extra small devices (portrait phones, less than 576px) */
 @media (max-width: 575.98px) {
