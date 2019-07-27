@@ -1,7 +1,7 @@
 
   <%= render 'shared/errors', obj: @reply if @reply %>
 <div class="jumbotron">
-  <h1 class="display-4" style="color:#000080;"><%= @article.title.capitalize %></h1>
+  <h1 class="titlesize"><%= @article.title.capitalize %></h1>
   <p class="lead"><%= simple_format(@article.description.capitalize) %></p>
   <% if @article.anexo.attached? %>
       <figure class="figure" style="width:50%; heigth:50%;">
