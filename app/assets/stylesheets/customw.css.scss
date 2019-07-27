@@ -23,6 +23,10 @@
     .friends {
         padding-left:15%;
     }
+
+    small {
+        font-size:5px;
+    }
 }
 
 /* Small devices (landscape phones, 576px and up) */
@@ -38,6 +42,10 @@
 
     .friends {
         padding-left:15%;
+    }
+
+    small {
+        font-size: 5px;
     }
 
 }
@@ -80,6 +88,7 @@
     .friends {
         padding-left:7%;
     }
+
 }
 
 /* Extra large devices (large desktops, 1200px and up) */
