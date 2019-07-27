@@ -9,12 +9,19 @@
        text-align: center;
    }
 
-   /* Extra small devices (portrait phones, less than 576px) */
+/* Extra small devices (portrait phones, less than 576px) */
 @media (max-width: 575.98px) {
     
     .form-signin {
         width: 100%;
         margin-top: 20%;
+    }
+    .editprofile .figure {
+        margin-left:30%;
+    }
+
+    .friends {
+        padding-left:15%;
     }
 }
 
@@ -25,6 +32,14 @@
         margin-top: 20%;
     }
 
+    .editprofile .figure {
+        margin-left:30%;
+    }
+
+    .friends {
+        padding-left:15%;
+    }
+
 }
 
 /* Medium devices (tablets, 768px and up)*/
@@ -32,6 +47,18 @@
 	.form-signin {
         width: 60%;
         margin-top: 10%;
+    }
+
+    .editprofile {
+        width:60%;
+    }
+
+    .editprofile .figure {
+        margin-left:35%;
+    }
+
+    .friends {
+        padding-left:10%;
     }
 }
 
@@ -41,6 +68,18 @@
         width: 50%;
         margin-top: 10%;
     }
+
+    .editprofile {
+        width:50%;
+    }
+
+    .editprofile .figure {
+        margin-left:35%;
+    }
+
+    .friends {
+        padding-left:7%;
+    }
 }
 
 /* Extra large devices (large desktops, 1200px and up) */
@@ -49,5 +88,15 @@
         width: 50%;
         margin-top: 10%;
     }
+    .editprofile {
+        width:50%;
+    }
     
+    .editprofile .figure {
+        margin-left:35%;
+    }
+
+    .friends {
+        padding-left:7%;
+    }
 }

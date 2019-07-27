@@ -1,4 +1,4 @@
-<div >
+
 
 <!--
   <% if @user.errors.any? %>
@@ -16,14 +16,14 @@
   <%= render 'shared/errors', obj: @user %>
 
 
-  <div style="width:400px; " class="p-2 mx-auto">
+  <div class="p-2 mx-auto editprofile">
 
     <%= form_with( url: profile_path, model: @user, local:true) do |f| %>
       
       <%= f.fields_for :user_profile do |pf|  %>
 
       <figure class="figure">
-          <%= image_tag(avatar_url, class:"figure-img img-fluid rounded", alt:"...", style:"width:200px; height:150px; margin-left:90px;" )  %>
+          <%= image_tag(avatar_url, class:"figure-img img-fluid rounded", alt:"...", style:"width:100%; height:100%;" )  %>
       </figure>
 
       <div class="form-group">
@@ -65,5 +65,5 @@
     <%= link_to "Delete User", user_registration_path, method: :delete  %>
   </div>
 
-</div>
+
 
