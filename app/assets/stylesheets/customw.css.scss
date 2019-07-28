@@ -1,4 +1,7 @@
-
+body {
+    background-image: url("bgyellow.jpg");
+    background-size: cover;
+}
 .article-meta-details {
     border-top: 1px solid #eaeaea;
     margin-top: 15px;
@@ -17,6 +20,10 @@
 
 .titlesize {
     color:#000080;
+}
+
+.navbar-light .navbar-nav .nav-link {
+    color: black;
 }
 
 
@@ -42,6 +49,11 @@
     .titlesize {
         font-size: 1.5em;
     }
+
+    .logout {
+        margin-left:0 !important;
+    }
+
 }
 
 /* Small devices (landscape phones, 576px and up) */
@@ -65,6 +77,10 @@
 
     .titlesize {
         font-size: 1.5em;
+    }
+
+    .logout {
+        margin-left:0 !important;
     }
 
 }

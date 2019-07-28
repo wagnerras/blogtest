@@ -22,6 +22,8 @@
   </div>
  
    <%= f.hidden_field :user_id, value:@usuario %> 
-  
- <%= f.submit class: 'btn btn-primary btn-large' %>
+
+    <%= link_to 'Back', :back, class:"btn btn-success" %>
+    <%= f.submit class: 'btn btn-primary btn-large' %>    
+
 <% end %>

@@ -25,5 +25,9 @@ module ApplicationHelper
         friend.user_profile.name? ? friend.user_profile.name : friend.email
     end
 
+    def current_user_name(current_user)
+       current_user.user_profile.name? ? current_user.user_profile.name : current_user.email
+    end
+
     
 end

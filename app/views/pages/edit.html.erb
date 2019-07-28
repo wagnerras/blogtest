@@ -60,9 +60,11 @@
         <%= f.submit "Update", class:"btn btn-primary btn-block" %>
       </div>
     <% end %>
-
-    <%= link_to "Back", :back %>
-    <%= link_to "Delete User", user_registration_path, method: :delete  %>
+    
+    <div class="mt-1" style="position:relative;">
+      <%= link_to "Back", :back %>
+      <%= link_to "Delete User", user_registration_path, data: {confirm: "Are you sure?"}, method: :delete, style:"position: absolute; right:0;"  %>
+    </div>
   </div>
 
 
